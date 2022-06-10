@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "query": {
+        "from": "AFN",
+        "to": "AWG",
+        "amount": 100
+    },
+    "info": {
+        "timestamp": 1654875076,
+        "quote": 0.02023
+    },
+    "result": 2.023
+}

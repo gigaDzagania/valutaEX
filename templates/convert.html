@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %} {{super()}}-Convert{%  endblock %}
+
+{% block content %}
+<img style="position: fixed; right: 0; margin-right: 140px"
+     src="https://upload.wikimedia.org/wikipedia/commons/5/5a/6_Most_Widely_used_currency_symbols_in_the_world.png"
+     width="200" height="100" xmlns="http://www.w3.org/1999/html">
+    <img style="position: fixed; right: 0; margin-right: 15px; margin-top: 100px" src="http://myfxtransfers.com/wp-content/uploads/2011/08/currencylist11.png" width="425" height="600">
+    <div style="position: fixed; left: 0; margin-left: 40px; margin-top: 60px">
+        <h1 style="color: lightseagreen">Welcome:&nbsp;{{name}}</h1>
+    </div>
+    <br>
+    <div style="position: fixed; left: 0; margin-left: 30px; margin-top: 120px">
+        <h4>How to use the website ?</h4>
+        <p>"Observe the rules otherwise conversion will not be possible"</p>
+        <P><b>1.</b> Enter the amount of money in the first box and then the <br>
+            three characters denoting its currency (it is necessary for the <br>
+            symbols to be written in capital letters "USD").
+        </P>
+        <p><b>2.</b> In the second case, enter the three symbols of the currency <br>
+            in which you want to convert the amount (symbols in this <br>
+            case must be written in capital letters "EUR").</p>
+        <p><b>3.</b> Finally, use the "convert" button, which will perform the <br>
+            task according to the information provided by you and will <br>
+            bring the desired result to the screen.</p>
+        <img style="margin-top: 5px" src="https://blog.jeton.com/wp-content/uploads/2020/05/currency-symbols1.png" width="420" height="200">
+    </div>
+    <center>
+    <br>
+    <img src="data:image/png;base64,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" width="400">
+    <br> <br>
+    <form method="post" style="width:250px;">
+        <div style="display: flex">
+            <input style="padding: 25px; border: 0.1px solid black; font-size: 30px; text-align: center; height: 70px" type="number" name="money" class="form-control mb-3 mt-3" placeholder="100">
+            <SELECT style="width: 250px; margin-top: 16px; margin-left: 20px; height: 70px; font-size: 30px; text-align: center" name="valuta1">
+            {% for c in lis %}
+                <OPTION value={{c.id}}>{{c.val}}</option>
+            {% endfor %}
+        </SELECT>
+        </div>
+        <img style="margin-bottom: 5px" src="https://thumbs.dreamstime.com/b/currency-exchange-vector-icon-black-white-money-illustration-outline-linear-dollar-euro-icon-eps-92862954.jpg" width="50"> <br>
+        <SELECT style="width: 250px; height: 70px; font-size: 30px; text-align: center" name="valuta2">
+            {% for c in lis %}
+                <OPTION value={{c.id}}>{{c.val}}</option>
+            {% endfor %}
+        </SELECT>
+        <br>
+        <button type="submit" class="btn btn-success mt-3">CONVERT</button>
+    </form>
+        <br><br><br>
+        <h3>{{res1}}</h3>
+        <br>
+        <h1>{{res2}}</h1>
+    </center>
+
+{% endblock %}
