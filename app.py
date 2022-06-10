@@ -38,11 +38,11 @@ def login():
         mail = request.form['mail']
         password = request.form['password']
         users = Users.query.filter_by(mail=mail).first()
-        if not users or check_password_hash(users.password, password):
-            flash("Username or password is incorrect !!!")
-        else:
+        if users and check_password_hash(users.password, password):
             session['mail'] = mail
             return redirect(url_for('convert'))
+        else:
+            flash("Username or password is incorrect !!!")
     return render_template('login.html')
 
 
@@ -68,7 +68,7 @@ def register():
         elif p != p1:
             flash('Repeat the password correctly !', 'error')
         else:
-            b1 = Users(name=n, lastname=l, mail=m, password=generate_password_hash(m))
+            b1 = Users(name=n, lastname=l, mail=m, password=generate_password_hash(p).decode('utf-8'))
             db.session.add(b1)
             db.session.commit()
             flash("Successful registration !", 'info')
